@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Sudoku</title>
+		<link rel="stylesheet" type="text/css" href="css/sudoku.css">
+	</head>
+	<body>
+	<div id="wrapper">
+	<div id="header">
+    <h1>数独游戏</h1>
+  </div>
+  <div id="sidebar">
+  <p>请选择游戏难度：</p>
+  <select id="level">
+    <option value ="Novice">Novice</option>
+    <option value ="Intermediate">Intermediate</option>
+    <option value="Expert">Expert</option>
+    <option value="Frantic">Frantic</option>
+  </select>
+  <br/>
+  <input type="button" id="pause" value="暂停"/>
+  <input type="button" id="reset" value="来一发"/>
+  <p id="timer"><br/></p>
+  </div>
+  <div id="content">
+  <div id ="wp">
+  <table id="sudoku"border="1">
+    <tr id="row1">
+        <td id="cell_0_0">&nbsp;</td>
+        <td id="cell_0_1">&nbsp;</td>
+        <td id="cell_0_2">&nbsp;</td>
+        <td id="cell_0_3">&nbsp;</td>
+        <td id="cell_0_4">&nbsp;</td>
+        <td id="cell_0_5">&nbsp;</td>
+        <td id="cell_0_6">&nbsp;</td>
+        <td id="cell_0_7">&nbsp;</td>
+        <td id="cell_0_8">&nbsp;</td>
+    </tr>
+    <tr id="row2">
+        <td id="cell_1_0">&nbsp;</td>
+        <td id="cell_1_1">&nbsp;</td>
+        <td id="cell_1_2">&nbsp;</td>
+        <td id="cell_1_3">&nbsp;</td>
+        <td id="cell_1_4">&nbsp;</td>
+        <td id="cell_1_5">&nbsp;</td>
+        <td id="cell_1_6">&nbsp;</td>
+        <td id="cell_1_7">&nbsp;</td>
+        <td id="cell_1_8">&nbsp;</td>
+    </tr>
+    <tr id="row3">
+        <td id="cell_2_0">&nbsp;</td>
+        <td id="cell_2_1">&nbsp;</td>
+        <td id="cell_2_2">&nbsp;</td>
+        <td id="cell_2_3">&nbsp;</td>
+        <td id="cell_2_4">&nbsp;</td>
+        <td id="cell_2_5">&nbsp;</td>
+        <td id="cell_2_6">&nbsp;</td>
+        <td id="cell_2_7">&nbsp;</td>
+        <td id="cell_2_8">&nbsp;</td>
+    </tr>
+    <tr id="row4">
+        <td id="cell_3_0">&nbsp;</td>
+        <td id="cell_3_1">&nbsp;</td>
+        <td id="cell_3_2">&nbsp;</td>
+        <td id="cell_3_3">&nbsp;</td>
+        <td id="cell_3_4">&nbsp;</td>
+        <td id="cell_3_5">&nbsp;</td>
+        <td id="cell_3_6">&nbsp;</td>
+        <td id="cell_3_7">&nbsp;</td>
+        <td id="cell_3_8">&nbsp;</td>
+    </tr>
+    <tr id="row5">
+        <td id="cell_4_0">&nbsp;</td>
+        <td id="cell_4_1">&nbsp;</td>
+        <td id="cell_4_2">&nbsp;</td>
+        <td id="cell_4_3">&nbsp;</td>
+        <td id="cell_4_4">&nbsp;</td>
+        <td id="cell_4_5">&nbsp;</td>
+        <td id="cell_4_6">&nbsp;</td>
+        <td id="cell_4_7">&nbsp;</td>
+        <td id="cell_4_8">&nbsp;</td>
+    </tr>
+    <tr id="row6">
+        <td id="cell_5_0">&nbsp;</td>
+        <td id="cell_5_1">&nbsp;</td>
+        <td id="cell_5_2">&nbsp;</td>
+        <td id="cell_5_3">&nbsp;</td>
+        <td id="cell_5_4">&nbsp;</td>
+        <td id="cell_5_5">&nbsp;</td>
+        <td id="cell_5_6">&nbsp;</td>
+        <td id="cell_5_7">&nbsp;</td>
+        <td id="cell_5_8">&nbsp;</td>
+    </tr>
+    <tr id="row7">
+        <td id="cell_6_0">&nbsp;</td>
+        <td id="cell_6_1">&nbsp;</td>
+        <td id="cell_6_2">&nbsp;</td>
+        <td id="cell_6_3">&nbsp;</td>
+        <td id="cell_6_4">&nbsp;</td>
+        <td id="cell_6_5">&nbsp;</td>
+        <td id="cell_6_6">&nbsp;</td>
+        <td id="cell_6_7">&nbsp;</td>
+        <td id="cell_6_8">&nbsp;</td>
+    </tr>
+    <tr id="row8">
+        <td id="cell_7_0">&nbsp;</td>
+        <td id="cell_7_1">&nbsp;</td>
+        <td id="cell_7_2">&nbsp;</td>
+        <td id="cell_7_3">&nbsp;</td>
+        <td id="cell_7_4">&nbsp;</td>
+        <td id="cell_7_5">&nbsp;</td>
+        <td id="cell_7_6">&nbsp;</td>
+        <td id="cell_7_7">&nbsp;</td>
+        <td id="cell_7_8">&nbsp;</td>
+    </tr>
+    <tr id="row9">
+        <td id="cell_8_0">&nbsp;</td>
+        <td id="cell_8_1">&nbsp;</td>
+        <td id="cell_8_2">&nbsp;</td>
+        <td id="cell_8_3">&nbsp;</td>
+        <td id="cell_8_4">&nbsp;</td>
+        <td id="cell_8_5">&nbsp;</td>
+        <td id="cell_8_6">&nbsp;</td>
+        <td id="cell_8_7">&nbsp;</td>
+        <td id="cell_8_8">&nbsp;</td>
+    </tr>
+  </table>
+  <table id="numPicker">
+    <tr>
+        <td id="1">1</td>
+        <td id="2">2</td>
+        <td id="3">3</td>
+    </tr>
+    <tr>
+        <td id="4">4</td>
+        <td id="5">5</td>
+        <td id="6">6</td>
+    </tr>
+    <tr>
+        <td id="7">7</td>
+        <td id="8">8</td>
+        <td id="9">9</td>
+    </tr>
+  </table>
+  <input type="button" id="finish" value="完成"/>
+  <input type="button" id="cacel" value="撤销"/>
+  <input type="button" id="answer" value="显示答案"/>
+  </div>
+  </div>
+  <div id="pageOverlay"></div>
+  <div id="again"> 
+    <p>恭喜！你的答案完全正确！用时：</p>
+    <p id="usedtime"></p>
+    <p>重新开始？</p><br/>
+    <span id="yes">确认</span>
+    <span id="no">取消</span>
+  </div>
+  </div>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/sudoku.js"></script>
+	</body>
+</html>
