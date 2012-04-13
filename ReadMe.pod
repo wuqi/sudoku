@@ -1,4 +1,5 @@
-=encoding utf-8
+=encoding utf8
+
 =head1 简单的数独游戏
 
   使用JQuery实现的简单数独游戏。
